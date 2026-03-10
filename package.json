@@ -1,0 +1,59 @@
+{
+  "name": "@henryxiaoyang/wechat-access-unqclawed",
+  "version": "1.0.8",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "description": "Dual-ingress relay for OpenClaw with QR session bootstrap and encrypted webhook handling",
+  "author": "HenryXiaoYang",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HenryXiaoYang/wechat-access-unqclawed.git"
+  },
+  "files": [
+    "index.ts",
+    "src/",
+    "openclaw.plugin.json",
+    "protocol-notes.md",
+    "README.md"
+  ],
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "channel": {
+      "id": "wechat-access-unqclawed",
+      "label": "Relay Spine",
+      "selectionLabel": "Relay Spine",
+      "detailLabel": "Relay Spine Bridge",
+      "docsPath": "/channels/wechat-access",
+      "docsLabel": "relay-spine",
+      "blurb": "QR-bootstrapped socket relay with encrypted webhook fallback for OpenClaw.",
+      "aliases": [
+        "wechatwork",
+        "wework",
+        "服务号",
+        "企微",
+        "企业微信"
+      ],
+      "order": 85
+    },
+    "install": {
+      "npmSpec": "@henryxiaoyang/wechat-access-unqclawed",
+      "localPath": "extensions/wechat-access",
+      "defaultChoice": "npm"
+    }
+  },
+  "dependencies": {
+    "fast-xml-parser": "^5.4.1",
+    "qrcode-terminal": "^0.12.0",
+    "undici": "^7.20.0",
+    "ws": "^8.18.0",
+    "zod": "^4.3.6"
+  },
+  "peerDependencies": {
+    "openclaw": ">=2026.1.26"
+  }
+}
