@@ -96,6 +96,14 @@ protocol-notes.md    socket envelope protocol reference
 - The repository intentionally keeps the root surface area small. Most behavior lives under `src/`.
 - `npm run typecheck` is available, but it still depends on OpenClaw and Node type availability in the local environment.
 
+## Security And Usage Notice
+
+- This project is provided for research, learning, and internal technical evaluation only.
+- You are responsible for ensuring that your use complies with local law, platform terms, organizational policy, and any access-control requirements that apply to your environment.
+- Do not use this project to obtain unauthorized access, bypass service restrictions, interfere with third-party systems, or process data without permission.
+- Protect all tokens, webhook secrets, encryption keys, and persisted session files. Treat them as sensitive credentials.
+- Review the code and configuration carefully before running it in any production or externally exposed environment.
+
 ## License
 
 MIT
