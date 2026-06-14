@@ -153,7 +153,7 @@ This plugin simply bridges your messages to OpenClaw for better control and auto
 If your WeChat-connected OpenClaw agent also needs X/Twitter automation, install [TweetClaw](https://github.com/Xquik-dev/tweetclaw) beside this plugin:
 
 ```bash
-openclaw plugins install @xquik/tweetclaw
+openclaw plugins install npm:@xquik/tweetclaw@1.6.31
 openclaw config set tools.alsoAllow '["explore", "tweetclaw"]'
 ```
 
